@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Fraud Detection</title>
+    <style>
+body {
+  margin: 0;
+  background: #eaf6fb;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #b3daff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.form-group label {
+  min-width: 60px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #0a2656;
+  font-size: 18px;
+}
+
+.form-group input[type="text"] {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #7fb3d5;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.submit-center {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.curved-button {
+  border-radius: 20px;
+  padding: 10px 30px;
+  background: #0a2656;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.curved-button:hover {
+  background: #174ea6;
+}
+
+/* Responsive: stack fields vertically on narrow screens */
+@media (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-group label {
+    min-width: unset;
+    margin-bottom: 4px;
+  }
+}
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Credit Card Fraud Detection</h1>
+    <div class="form-container">
+      <form method="post">
+        <div class="form-group">
+          <label for="V1">V1:</label>
+          <input type="text" id="V1" name="V1" required>
+        </div>
+        <div class="form-group">
+          <label for="V2">V2:</label>
+          <input type="text" id="V2" name="V2" required>
+        </div>
+        <div class="form-group">
+          <label for="V3">V3:</label>
+          <input type="text" id="V3" name="V3" required>
+        </div>
+        <div class="form-group">
+          <label for="V4">V4:</label>
+          <input type="text" id="V4" name="V4" required>
+        </div>
+        <div class="form-group">
+          <label for="V5">V5:</label>
+          <input type="text" id="V5" name="V5" required>
+        </div>
+        <div class="form-group">
+          <label for="Amount">Amount:</label>
+          <input type="text" id="Amount" name="Amount" required>
+        </div>
+        <div class="submit-center">
+          <input type="submit" value="Predict" class="curved-button">
+        </div>
+      </form>
+    </div>
+    {% if result %}
+        <h2 style="text-align:center;">Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
